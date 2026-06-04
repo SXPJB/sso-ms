@@ -1,0 +1,44 @@
+[versions]
+kotlin = "2.2.21"
+spring-boot = "4.0.6"
+spring-dependency-management = "1.1.7"
+opensaml = "5.2.1"
+
+[libraries]
+# Spring
+spring-boot-starter-webmvc      = { module = "org.springframework.boot:spring-boot-starter-webmvc" }
+spring-boot-starter-webmvc-test = { module = "org.springframework.boot:spring-boot-starter-webmvc-test" }
+
+# Kotlin
+kotlin-reflect    = { module = "org.jetbrains.kotlin:kotlin-reflect" }
+kotlin-test-junit = { module = "org.jetbrains.kotlin:kotlin-test-junit5" }
+
+# Jackson
+jackson-kotlin = { module = "tools.jackson.module:jackson-module-kotlin" }
+
+# OpenSAML
+opensaml-core-api    = { module = "org.opensaml:opensaml-core-api",    version.ref = "opensaml" }
+opensaml-core-impl   = { module = "org.opensaml:opensaml-core-impl",   version.ref = "opensaml" }
+opensaml-saml-api    = { module = "org.opensaml:opensaml-saml-api",    version.ref = "opensaml" }
+opensaml-saml-impl   = { module = "org.opensaml:opensaml-saml-impl",   version.ref = "opensaml" }
+opensaml-xmlsec-api  = { module = "org.opensaml:opensaml-xmlsec-api",  version.ref = "opensaml" }
+opensaml-xmlsec-impl = { module = "org.opensaml:opensaml-xmlsec-impl", version.ref = "opensaml" }
+
+# Test
+junit-platform-launcher = { module = "org.junit.platform:junit-platform-launcher" }
+
+[bundles]
+opensaml = [
+    "opensaml-core-api",
+    "opensaml-core-impl",
+    "opensaml-saml-api",
+    "opensaml-saml-impl",
+    "opensaml-xmlsec-api",
+    "opensaml-xmlsec-impl",
+]
+
+[plugins]
+kotlin-jvm                  = { id = "org.jetbrains.kotlin.jvm",            version.ref = "kotlin" }
+kotlin-spring               = { id = "org.jetbrains.kotlin.plugin.spring",  version.ref = "kotlin" }
+spring-boot                 = { id = "org.springframework.boot",             version.ref = "spring-boot" }
+spring-dependency-management = { id = "io.spring.dependency-management",    version.ref = "spring-dependency-management" }

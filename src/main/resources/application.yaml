@@ -1,0 +1,18 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: saml-ms
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+    default-property-inclusion: non_null
+    time-zone: America/Mexico_City
+
+app:
+  saml:
+    rsa:
+      private-key: ${PRIVATE_KEY}
+      certificate: ${PUBLIC_CERTIFICATE}
+    token:
+      validity-seconds: 300
