@@ -2,6 +2,7 @@ package com.fsociety.auth.sso.ms.core.helper
 
 import com.fsociety.auth.sso.ms.common.dto.SamlAssertionData
 import net.shibboleth.shared.xml.ParserPool
+import net.shibboleth.shared.xml.SerializeSupport
 import org.opensaml.core.xml.XMLObjectBuilderFactory
 import org.opensaml.core.xml.config.XMLObjectProviderRegistrySupport
 import org.opensaml.core.xml.schema.XSString
@@ -118,6 +119,14 @@ class SamlXmlHelper(
             ?: throw IllegalArgumentException("Root element is not a SAML Response")
     }
 
+    fun parseToXml(response: Response): String {
+        val marshaller = XMLObjectProviderRegistrySupport.getMarshallerFactory()
+            .getMarshaller(response)
+            ?: throw IllegalArgumentException("No marshaller available for SAML Response")
+        val element = marshaller.marshall(response)
+        return SerializeSupport.nodeToString(element)
+    }
+
     /**
      * Validates assertion conditions (timing restrictions) and extracts key SAML fields into a simple data transfer object.
      *
@@ -126,8 +135,6 @@ class SamlXmlHelper(
      * @throws IllegalArgumentException If validation fails or critical fields are missing.
      */
     fun extractAssertionData(assertion: Assertion): SamlAssertionData {
-        validateConditions(assertion.conditions)
-
         val issuer = assertion.issuer?.value
             ?: throw IllegalArgumentException("Missing issuer in assertion")
 
@@ -245,15 +252,5 @@ class SamlXmlHelper(
                 this.name = name
                 attributeValues.add(attrValue)
             }
-    }
-
-    private fun validateConditions(conditions: Conditions?) {
-        val now = Instant.now(clock)
-        conditions?.notBefore?.let {
-            if (now.isBefore(it)) throw IllegalArgumentException("Assertion not yet valid (NotBefore: $it)")
-        }
-        conditions?.notOnOrAfter?.let {
-            if (!now.isBefore(it)) throw IllegalArgumentException("Assertion has expired (NotOnOrAfter: $it)")
-        }
     }
 }

@@ -1,1 +1,1 @@
-rootProject.name = "smal-ms"
+rootProject.name = "sso-auth-ms"
