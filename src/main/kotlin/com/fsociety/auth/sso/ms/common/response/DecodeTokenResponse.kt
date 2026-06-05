@@ -2,7 +2,7 @@ package com.fsociety.auth.sso.ms.common.response
 
 import java.time.ZonedDateTime
 
-data class VerifyTokenResponse(
+data class DecodeTokenResponse(
     val issuer: String,
     val audience: String?,
     val notBefore: ZonedDateTime?,

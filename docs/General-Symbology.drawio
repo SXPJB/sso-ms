@@ -1,0 +1,172 @@
+<mxfile host="drawio-plugin" agent="Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36" modified="2026-06-04T14:16:12.909Z" version="22.1.22" etag="n0_cJAipwLzumZ4jFWZF" type="embed" pages="2">
+  <diagram name="Visual Standard" id="HME9-1BmQYkjZmcqsTC-">
+    <mxGraphModel dx="772" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-1" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;C4 Model (Architecture)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-2" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;BPMN (Business Flows)&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="600" y="40" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-3" value="&lt;b&gt;Internal User&lt;/b&gt;&lt;br&gt;&lt;i&gt;[Person]&lt;/i&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="80" y="120" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-4" value="&lt;b&gt;External User&lt;/b&gt;&lt;br&gt;&lt;i&gt;[Person]&lt;/i&gt;" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;fillColor=#f5f5f5;strokeColor=#666666;fontColor=#333333;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="240" y="120" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-5" value="&lt;b&gt;App Name&lt;/b&gt;&lt;br&gt;&lt;i&gt;[Mobile App / Web App]&lt;/i&gt;&lt;br&gt;&lt;br&gt;Provides interface to users." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="260" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-6" value="&lt;b&gt;Service Name&lt;/b&gt;&lt;br&gt;&lt;i&gt;[spring-boot-microservice]&lt;/i&gt;&lt;br&gt;&lt;br&gt;Central business logic and orchestration." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="380" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-7" value="&lt;b&gt;Component Name&lt;/b&gt;&lt;br&gt;&lt;i&gt;[REST-API]&lt;/i&gt;&lt;br&gt;&lt;br&gt;Specific domain handling or endpoints." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="500" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-8" value="&lt;b&gt;External System (e.g., Braze)&lt;/b&gt;&lt;br&gt;&lt;i&gt;[External System]&lt;/i&gt;&lt;br&gt;&lt;br&gt;Third-party system outside our control." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="620" width="280" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-9" value="&lt;b&gt;Database&lt;/b&gt;&lt;br&gt;&lt;i&gt;[MongoDB / PostgreSQL]&lt;/i&gt;&lt;br&gt;&lt;br&gt;State storage." style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="110" y="730" width="140" height="110" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-10" value="&lt;b&gt;Start&lt;/b&gt;" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=JetBrains Mono;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="600" y="120" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-11" value="&lt;b&gt;Event&lt;/b&gt;" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=JetBrains Mono;strokeWidth=1;" parent="1" vertex="1">
+          <mxGeometry x="720" y="120" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-12" value="&lt;b&gt;End&lt;/b&gt;" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=JetBrains Mono;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="840" y="120" width="60" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-13" value="&lt;b&gt;Condition?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="600" y="240" width="120" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-14" value="&lt;b&gt;Execute Task&lt;/b&gt;&lt;br&gt;Process information" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="600" y="380" width="160" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-15" value="&lt;b&gt;Technical Note:&lt;/b&gt;&lt;br&gt;Add clarifications here about the payload, Kafka topics, or handled exceptions." style="shape=note;whiteSpace=wrap;html=1;backgroundOutline=1;darkOpacity=0.05;fillColor=#ffe6cc;strokeColor=#d79b00;fontFamily=JetBrains Mono;align=left;verticalAlign=top;spacingTop=5;spacingLeft=10;" parent="1" vertex="1">
+          <mxGeometry x="600" y="500" width="220" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-16" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;Connection Lines&lt;/b&gt;&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="600" y="660" width="400" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-17" value="&lt;b&gt;Synchronous Call&lt;/b&gt;&lt;br&gt;&lt;i&gt;(HTTP/REST, RPC, JDBC)&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="600" y="730" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-18" value="Sends Payload&lt;br&gt;&lt;i&gt;[JSON/HTTPS]&lt;/i&gt;" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;endSize=8;labelBackgroundColor=none;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="750" as="sourcePoint" />
+            <mxPoint x="1060" y="750" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-19" value="&lt;b&gt;Asynchronous Call&lt;/b&gt;&lt;br&gt;&lt;i&gt;(Event, Kafka, SQS)&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="600" y="800" width="250" height="40" as="geometry" />
+        </mxCell>
+        <mxCell id="DxlVWu9PU8Bu_R_K-PUw-20" value="Publishes Event&lt;br&gt;&lt;i&gt;[KAFKA]&lt;/i&gt;" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;dashed=1;fontFamily=JetBrains Mono;endSize=8;labelBackgroundColor=none;" parent="1" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="860" y="820" as="sourcePoint" />
+            <mxPoint x="1060" y="820" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+  <diagram id="39iuslzmXLPQ2C_LVw-e" name="Examples">
+    <mxGraphModel dx="772" dy="400" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="lhZNLkkZYocwSvadwdwh-1" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;Example 1: C4 Context / Container Diagram&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;i&gt;Scenario: Sending a push notification through Braze.&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="40" y="40" width="800" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-2" value="&lt;b&gt;rpp-payments-ms-mx&lt;/b&gt;&lt;br&gt;&lt;i&gt;[spring-boot-microservice]&lt;/i&gt;&lt;br&gt;&lt;br&gt;Handles payments and emits events." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="40" y="160" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-3" value="&lt;b&gt;Notifications Sender&lt;/b&gt;&lt;br&gt;&lt;i&gt;[spring-boot-microservice]&lt;/i&gt;&lt;br&gt;&lt;br&gt;Orchestrates campaigns." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="440" y="160" width="220" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-4" value="&lt;b&gt;Campaigns DB&lt;/b&gt;&lt;br&gt;&lt;i&gt;[PostgreSQL]&lt;/i&gt;&lt;br&gt;&lt;br&gt;Stores notification_campaigns." style="shape=cylinder3;whiteSpace=wrap;html=1;boundedLbl=1;backgroundOutline=1;size=15;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="468" y="360" width="165" height="120" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-5" value="&lt;b&gt;Braze&lt;/b&gt;&lt;br&gt;&lt;i&gt;[External System]&lt;/i&gt;&lt;br&gt;&lt;br&gt;3rd Party Push Provider." style="rounded=1;whiteSpace=wrap;html=1;fillColor=#f5f5f5;fontColor=#333333;strokeColor=#666666;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="840" y="160" width="200" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-6" value="Publishes EVENT_PUSH&lt;br&gt;&lt;i&gt;[KAFKA]&lt;/i&gt;" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;dashed=1;fontFamily=JetBrains Mono;endSize=8;labelBackgroundColor=none;" parent="1" source="lhZNLkkZYocwSvadwdwh-2" target="lhZNLkkZYocwSvadwdwh-3" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-7" value="Sends Push Request&lt;br&gt;&lt;i&gt;[JSON/HTTPS]&lt;/i&gt;" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;endSize=8;labelBackgroundColor=none;" parent="1" source="lhZNLkkZYocwSvadwdwh-3" target="lhZNLkkZYocwSvadwdwh-5" edge="1">
+          <mxGeometry width="50" height="50" relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-8" value="Reads/Writes Config&lt;br&gt;&lt;i&gt;[JDBC/SQL]&lt;/i&gt;" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;endSize=8;labelBackgroundColor=none;" parent="1" source="lhZNLkkZYocwSvadwdwh-3" target="lhZNLkkZYocwSvadwdwh-4" edge="1">
+          <mxGeometry x="0.0026" y="70" width="50" height="50" relative="1" as="geometry">
+            <mxPoint as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-9" value="&lt;font style=&quot;font-size: 24px;&quot;&gt;&lt;b&gt;Example 2: BPMN Flow Diagram&lt;/b&gt;&lt;/font&gt;&lt;br&gt;&lt;i&gt;Scenario: Executing Notification Campaign.&lt;/i&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="40" y="560" width="800" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-10" value="&lt;b&gt;Event&lt;br&gt;Received&lt;/b&gt;" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=JetBrains Mono;strokeWidth=2;" parent="1" vertex="1">
+          <mxGeometry x="40" y="680" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-11" value="&lt;b&gt;Parse Braze Data&lt;/b&gt;&lt;br&gt;(origin_data)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="180" y="690" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-12" value="&lt;b&gt;Has External&lt;br&gt;Provider?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="380" y="670" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-13" value="&lt;b&gt;Call Braze API&lt;/b&gt;&lt;br&gt;Send Push" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#d5e8d4;strokeColor=#82b366;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="580" y="600" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-14" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=1;entryDx=0;entryDy=0;strokeWidth=2;" parent="1" source="lhZNLkkZYocwSvadwdwh-15" target="lhZNLkkZYocwSvadwdwh-22" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-15" value="&lt;b&gt;Log to DB&lt;/b&gt;&lt;br&gt;Save Error / Success" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#dae8fc;strokeColor=#6c8ebf;fontFamily=JetBrains Mono;align=center;verticalAlign=middle;" parent="1" vertex="1">
+          <mxGeometry x="580" y="780" width="140" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-16" value="&lt;b&gt;Done&lt;/b&gt;" style="shape=ellipse;html=1;dashed=0;whiteSpace=wrap;perimeter=ellipsePerimeter;fillColor=#f8cecc;strokeColor=#b85450;fontFamily=JetBrains Mono;strokeWidth=3;" parent="1" vertex="1">
+          <mxGeometry x="940" y="680" width="80" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-17" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;" parent="1" source="lhZNLkkZYocwSvadwdwh-10" target="lhZNLkkZYocwSvadwdwh-11" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-18" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;" parent="1" source="lhZNLkkZYocwSvadwdwh-11" target="lhZNLkkZYocwSvadwdwh-12" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-19" value="Yes (Braze)" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=none;" parent="1" source="lhZNLkkZYocwSvadwdwh-12" target="lhZNLkkZYocwSvadwdwh-13" edge="1">
+          <mxGeometry x="0.0585" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="450" y="630" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-20" value="No (Error)" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=none;" parent="1" source="lhZNLkkZYocwSvadwdwh-12" target="lhZNLkkZYocwSvadwdwh-15" edge="1">
+          <mxGeometry x="0.059" y="-10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="450" y="810" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-21" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=2;" parent="1" source="lhZNLkkZYocwSvadwdwh-22" target="lhZNLkkZYocwSvadwdwh-16" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-22" value="&lt;b&gt;Has External&lt;br&gt;Provider?&lt;/b&gt;" style="rhombus;whiteSpace=wrap;html=1;fillColor=#fff2cc;strokeColor=#d6b656;fontFamily=JetBrains Mono;" parent="1" vertex="1">
+          <mxGeometry x="740" y="670" width="140" height="100" as="geometry" />
+        </mxCell>
+        <mxCell id="lhZNLkkZYocwSvadwdwh-23" value="" style="endArrow=classic;html=1;rounded=0;strokeWidth=2;fontFamily=JetBrains Mono;edgeStyle=orthogonalEdgeStyle;labelBackgroundColor=none;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="lhZNLkkZYocwSvadwdwh-13" target="lhZNLkkZYocwSvadwdwh-22" edge="1">
+          <mxGeometry x="0.0585" y="10" relative="1" as="geometry">
+            <mxPoint as="offset" />
+            <Array as="points">
+              <mxPoint x="810" y="630" />
+            </Array>
+            <mxPoint x="745" y="650" as="sourcePoint" />
+            <mxPoint x="875" y="610" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

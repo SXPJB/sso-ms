@@ -1,8 +1,9 @@
-# SMAL-MS
+# SSO-AUTH-MS
 
-Microservice for generating and verifying signed and encrypted SAML 2.0 tokens. Exposes a REST API for issuing dynamic assertions and validating them, powered by OpenSAML 5 as the cryptographic engine.
+Microservice for generating and verifying signed and encrypted SAML 2.0 tokens. Exposes a REST API for issuing dynamic assertions and decoding them, powered by OpenSAML 5 as the cryptographic engine.
 
----
+> For architecture diagrams and a full design walkthrough see [`docs/SSO-ARCHITECTURE.md`](docs/SSO-ARCHITECTURE.md).
+
 
 ## Stack
 
@@ -33,21 +34,22 @@ src/main/kotlin/com/fsociety/auth/sso/ms/
 │   │   └── SAMLException.kt              # Domain exception carrying HttpStatus
 │   ├── request/
 │   │   ├── GenerateTokenRequest.kt
-│   │   └── VerifyTokenRequest.kt
+│   │   └── DecodeTokenRequest.kt
 │   └── response/
 │       ├── ErrorApi.kt
 │       ├── GenerateTokenResponse.kt
-│       └── VerifyTokenResponse.kt
+│       └── DecodeTokenResponse.kt
 ├── core/
 │   ├── config/
 │   │   ├── CoreConfig.kt                 # Clock bean (America/Mexico_City)
+│   │   ├── OpenSamlBootstrapper.kt       # Initializes OpenSAML on startup
 │   │   └── SamlConfig.kt                 # OpenSAML ParserPool bean
 │   ├── delegate/
 │   │   ├── GenerateSsoTokenDelegate.kt
-│   │   └── VerifySsoTokenDelegate.kt
+│   │   ├── DecodeSsoTokenDelegate.kt
+│   │   └── DecodeSsoTokenXmlDelegate.kt
 │   ├── helper/
-│   │   ├── OpenSamlBootstrapper.kt        # Initializes OpenSAML on startup
-│   │   ├── RsaAssertionHelper.kt          # RSA signing, encryption and decryption
+│   │   ├── SamlTokenHelper.kt            # RSA signing, encryption and decryption
 │   │   └── SamlXmlHelper.kt              # SAML XML construction and parsing
 │   └── service/
 │       └── SsoService.kt
@@ -154,16 +156,23 @@ Generates a signed (RSA-SHA256) and encrypted (AES-256-GCM) SAML 2.0 token.
 
 ---
 
-### POST `/v1/sso/verify`
+### POST `/v1/sso/decode`
 
-Verifies and decodes a SAML token. Returns the assertion data if valid.
+Decrypts and decodes a SAML token. Returns the assertion data if valid.
 
 **Request**
 ```json
 {
-  "token_b64": "<Base64 SAML Response XML>"
+  "token": "<Base64 SAML Response XML>"
 }
 ```
+
+**Optional headers**
+
+| Header | Type | Description |
+|---|---|---|
+| `X-Ignore-Signature-Validation` | `Boolean` | Skip RSA signature verification (default: `false`) |
+| `X-Ignore-Conditions-Validation` | `Boolean` | Skip `NotBefore` / `NotOnOrAfter` time checks (default: `false`) |
 
 **Response `200`**
 ```json
@@ -191,6 +200,32 @@ Verifies and decodes a SAML token. Returns the assertion data if valid.
 
 ---
 
+### POST `/v1/sso/decode/xml`
+
+Decrypts a SAML token and returns the raw SAML Response XML.
+
+**Request**
+```json
+{
+  "token": "<Base64 SAML Response XML>"
+}
+```
+
+**Optional headers**
+
+| Header | Type | Description |
+|---|---|---|
+| `X-Include-Decrypted-Assertion` | `Boolean` | Replace the encrypted assertion with the decrypted one in the returned XML (default: `false`) |
+
+**Response `200`** — `Content-Type: application/xml`
+```xml
+<samlp:Response xmlns:samlp="urn:oasis:names:tc:SAML:2.0:protocol" ...>
+  ...
+</samlp:Response>
+```
+
+---
+
 ## Cryptographic flow
 
 ```
@@ -201,7 +236,7 @@ Generate:
            → SAML Response XML
            → Base64
 
-Verify:
+Decode:
   Base64 → SAML Response XML
          → AES-256-GCM decryption
          → RSA-SHA256 signature validation

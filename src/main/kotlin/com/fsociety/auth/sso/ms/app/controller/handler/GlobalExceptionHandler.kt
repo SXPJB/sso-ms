@@ -21,4 +21,16 @@ class GlobalExceptionHandler {
                     status = ex.status.value()
                 )
             )
+
+    @ExceptionHandler(Exception::class)
+    fun handleGenericException(ex: Exception): ResponseEntity<ErrorApi> =
+        ResponseEntity
+            .status(500)
+            .body(
+                ErrorApi(
+                    timestamp = Instant.now(),
+                    message = ex.message ?: "Internal server error",
+                    status = 500
+                )
+            )
 }
